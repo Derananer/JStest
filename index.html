@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>js test</title>
+	<script src="try_test.js"></script>
+</head>
+<body onload = "startTimer()">
+<p><span id="my_timer" style="color: #f00; font-size: 150%; font-weight: bold;">20:00</span></p>
+	<h1>Тест-тренажер по языку гипертекстовой разметки</h1>
+	<form id=test_form>
+		<ol>
+			<li>Как называется язык гипертекстовой разметки документов?
+				<p>Ответ:<input type=text name=q1 value=""></p>
+			</li>
+			<li>Какой тег служит для оформления гиперссылок?
+			    <p><input type=radio name=q2>H</p>
+    			<p><input type=radio name=q2>P</p>
+    			<p><input type=radio name=q2>A</p>
+    			<p><input type=radio name=q2>LINK</p>
+    		</li>
+    		<li>Укажите атрибуты тега IMG.
+    			<p><input type=checkbox name=q4>SIZE</p>
+      			<p><input type=checkbox name=answ4>SRC</p>
+      			<p><input type=checkbox name=answ4>BORDER</p>
+      			<p><input type=checkbox name=answ4>HREF</p>
+      		</li>
+      		<li>Установите соответствие между тегами и атрибутами.
+ 				<table border="0">
+ 					<tr>
+ 						<td>font</td>
+ 						<td>
+ 							<select name=answ10_font>
+        						<option>1</option>
+        						<option>2</option>
+        						<option>3</option>
+        						<option>4</option>
+    						</select>
+    					</td>
+						<td>1. face</td>
+ 					</tr>
+ 					<tr>
+ 						<td>img</td>
+ 						<td>
+ 							<select name=answ10_img>
+        						<option>1</option>
+       	 						<option>2</option>
+       	 						<option>3</option>
+       	 						<option>4</option>
+       	 					</select>
+       	 				</td>
+       	 				<td>2. href</td>
+       	 			</tr>
+       	 			<tr>
+       	 				<td>a</td>
+       	 				<td>
+       	 					<select name=answ10_a>
+       	 						<option>1</option>
+       	 						<option>2</option>
+       	 						<option>3</option>
+       	 						<option>4</option>
+       	 					</select>
+       	 				</td>
+       	 				<td>3. cellpadding</td>
+       	 			</tr>
+       	 			<tr>
+       	 				<td>table</td>
+       	 				<td>
+       	 					<select name=answ10_table>
+       	 						<option>1</option>
+       	 						<option>2</option>
+       	 						<option>3</option>
+       	 						<option>4</option>
+       	 					</select>
+       	 				</td>
+       	 				<td>4. vspace</td>
+       	 			</tr>
+    	   	 	</table>
+       	 	</li>
+		</ol>
+		<input type=button value="Проверить" onclick="CheckAnswers()">
+		<input type=reset value="Сброс">
+  	</form>
+</body>
+</html>
