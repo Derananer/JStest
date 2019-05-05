@@ -1,7 +1,147 @@
 {
-  "name": "$name$",
-  "version": "$version$",
-  "dependencies": {
-    $END$
-  }
+  "name": "JStest",
+  "number": 6,
+  "questions":
+  [
+    {
+      "type": "radio",
+      "value": "question",
+      "numberOfAnswers": 4,
+      "answers":[
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "4"
+        }
+      ],
+      "rightAnswer": 1,
+      "hint":""
+    },
+    {
+      "type": "checkbox",
+      "value": "hello",
+      "numberOfAnswers": 4,
+      "answers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "4"
+        }
+      ],
+      "numberOfRightAnswers": 2,
+      "rightAnswers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        }
+      ],
+      "hint":""
+    },
+    {
+      "type": "text",
+      "value": "",
+      "numberOfAnswers": 1,
+      "answers":
+      [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "hi",
+      "hint":""
+    },
+    {
+      "type": "checkbox",
+      "value": "hello",
+      "numberOfAnswers": 4,
+      "answers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "4"
+        }
+      ],
+      "numberOfRightAnswers": 2,
+      "rightAnswers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        }
+      ],
+      "hint":""
+    },
+    {
+      "type": "text",
+      "value": "",
+      "numberOfAnswers": 1,
+      "answers":
+      [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "hi",
+      "hint":""
+    },
+    {
+      "type": "checkbox",
+      "value": "hello",
+      "numberOfAnswers": 4,
+      "answers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "4"
+        }
+      ],
+      "numberOfRightAnswers": 2,
+      "rightAnswers":
+      [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        }
+      ],
+      "hint":""
+    }
+  ]
 }

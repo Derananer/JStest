@@ -3,83 +3,107 @@
 <head>
     <meta charset="UTF-8">
 	<title>js test</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style type="text/css">
+        .bulletsBlock:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .bulletsBlock > div {
+            width: 30%;
+            float: left;
+            background: rgba(0,0,0,0.3);
+            margin-left:5%;
+            text-align: center;
+            position: relative;
+            padding-bottom: 31.7%;
+            cursor: pointer;
+            -webkit-transition:all 0.35s linear;
+            transition:all 0.35s linear;
+        }
+
+        .bulletsBlock > div:first-child {
+            margin-left:0;
+        }
+
+        /*Тень снизу у блока при наведении*/
+        .bulletsBlock > div:hover {
+            -webkit-box-shadow: 0 35px 35px -35px #000000;
+            -moz-box-shadow: 0 35px 35px -35px #000000;
+            box-shadow: 0 35px 35px -35px #000000;
+        }
+        .bullet-item span{
+            line-height: 1.5em;
+            font-size: 12.5em;
+            color:#fff;
+            position: absolute;
+            top:0;
+            left:0;
+            display: block;
+            width: 100%;
+            -webkit-transition:all 0.35s ease;
+            transition:all 0.35s ease;
+        }
+
+        /*Анимация иконки при наведении - уменьшение и сдвиг вверх*/
+        .bulletsBlock > div:hover span.iconBullet{
+            line-height: 1.35em;
+            font-size: 10.625em;
+            top:-2.7%;
+        }
+        .titleBullet, .hideText {
+            position: absolute;
+            left:0;
+            bottom:0;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            color: #fff;
+            -webkit-transition:all 0.35s ease;
+            transition:all 0.35s ease;
+        }
+
+        .titleBullet {
+            line-height: 2.5em;
+            font-size: 2.1875em;
+            background:#3B3B3B;
+            z-index: 10;
+        }
+
+        .hideText {
+            line-height: 1.3em;
+            font-size: 1.25em;
+            padding: 1em 0;
+            background:#3B3B3B;
+            font-weight: 300;
+            z-index: 8;
+            height: 50px;
+            -webkit-transition:all 0.35s linear 0.2s;
+            transition:all 0.35s linear 0.2s;
+        }
+
+        /*Анимация при наведении видимого текстового блока*/
+        .bulletsBlock > div:hover p.titleBullet{
+            bottom:80px;
+        }
+
+        /*Анимация при наведении скрытого текстового блока*/
+        .bulletsBlock > div:hover p.hideText{
+            background:#454545;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="try_test.js"></script>
 </head>
-<body onload = "startTimer()">
-<p><span id="my_timer" style="color: #f00; font-size: 150%; font-weight: bold;">20:00</span></p>
+<body class = "app" onload="InitTest()">
 	<h1>Тест-тренажер по языку гипертекстовой разметки</h1>
-	<form id=test_form>
-		<ol>
-			<li>Как называется язык гипертекстовой разметки документов?
-				<p>Ответ:<input type=text name=q1 value=""></p>
-			</li>
-			<li>Какой тег служит для оформления гиперссылок?
-			    <p><input type=radio name=q2>H</p>
-    			<p><input type=radio name=q2>P</p>
-    			<p><input type=radio name=q2>A</p>
-    			<p><input type=radio name=q2>LINK</p>
-    		</li>
-    		<li>Укажите атрибуты тега IMG.
-    			<p><input type=checkbox name=q4>SIZE</p>
-      			<p><input type=checkbox name=answ4>SRC</p>
-      			<p><input type=checkbox name=answ4>BORDER</p>
-      			<p><input type=checkbox name=answ4>HREF</p>
-      		</li>
-      		<li>Установите соответствие между тегами и атрибутами.
- 				<table border="0">
- 					<tr>
- 						<td>font</td>
- 						<td>
- 							<select name=answ10_font>
-        						<option>1</option>
-        						<option>2</option>
-        						<option>3</option>
-        						<option>4</option>
-    						</select>
-    					</td>
-						<td>1. face</td>
- 					</tr>
- 					<tr>
- 						<td>img</td>
- 						<td>
- 							<select name=answ10_img>
-        						<option>1</option>
-       	 						<option>2</option>
-       	 						<option>3</option>
-       	 						<option>4</option>
-       	 					</select>
-       	 				</td>
-       	 				<td>2. href</td>
-       	 			</tr>
-       	 			<tr>
-       	 				<td>a</td>
-       	 				<td>
-       	 					<select name=answ10_a>
-       	 						<option>1</option>
-       	 						<option>2</option>
-       	 						<option>3</option>
-       	 						<option>4</option>
-       	 					</select>
-       	 				</td>
-       	 				<td>3. cellpadding</td>
-       	 			</tr>
-       	 			<tr>
-       	 				<td>table</td>
-       	 				<td>
-       	 					<select name=answ10_table>
-       	 						<option>1</option>
-       	 						<option>2</option>
-       	 						<option>3</option>
-       	 						<option>4</option>
-       	 					</select>
-       	 				</td>
-       	 				<td>4. vspace</td>
-       	 			</tr>
-    	   	 	</table>
-       	 	</li>
-		</ol>
-		<input type=button value="Проверить" onclick="CheckAnswers()">
-		<input type=reset value="Сброс">
-  	</form>
+    <p><span id="my_timer" style="color: #f00; font-size: 150%; font-weight: bold;">20:00</span></p>
+    <input id="plain_test" type=button value="Начать тест" onclick=PlainTest()>
+    <input id="train_test" type=button value="Тренировка" onclick=TrainTest()>
 </body>
 </html>
