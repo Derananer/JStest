@@ -2,108 +2,127 @@
 <html>
 <head>
     <meta charset="UTF-8">
-	<title>js test</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <style type="text/css">
+    <title>js test</title>
+    <link rel="stylesheet" href="default.css" type="text/css"/>
+    <!--<style>
+        a {
+            color: #ff6600;
+            transition: .5s;
+            -moz-transition: .5s;
+            -webkit-transition: .5s;
+            -o-transition: .5s;
+            font-family: ‘Muli’, sans-serif;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        h1 {
+            padding-bottom: 15px
+
+        }
+
+        h1 a {
+            font-family: ‘Open Sans Condensed’, sans-serif;
+            font-size: 48px;
+            color: #66333333;
+        }
+
+        h1 a:hover {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        p {
+            color: #333;
+            font-family: ‘Muli’, sans-serif;
+            margin-bottom: 15px;
+        }
+
+        a.more-link {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 3px 10px;
+            background-color: #ff6600;
+            border-radius: 5px;
+            float: right;
+        }
+
+        a.more-link:hover {
+            text-decoration: none;
+            background-color: #666;
+            border-radius: 0px;
+        }
+
         .bulletsBlock:after {
             content: "";
             display: table;
             clear: both;
         }
 
-        .bulletsBlock > div {
-            width: 30%;
-            float: left;
-            background: rgba(0,0,0,0.3);
-            margin-left:5%;
-            text-align: center;
-            position: relative;
-            padding-bottom: 31.7%;
-            cursor: pointer;
-            -webkit-transition:all 0.35s linear;
-            transition:all 0.35s linear;
-        }
-
-        .bulletsBlock > div:first-child {
-            margin-left:0;
-        }
-
-        /*Тень снизу у блока при наведении*/
-        .bulletsBlock > div:hover {
-            -webkit-box-shadow: 0 35px 35px -35px #000000;
-            -moz-box-shadow: 0 35px 35px -35px #000000;
-            box-shadow: 0 35px 35px -35px #000000;
-        }
-        .bullet-item span{
-            line-height: 1.5em;
-            font-size: 12.5em;
-            color:#fff;
-            position: absolute;
-            top:0;
-            left:0;
-            display: block;
-            width: 100%;
-            -webkit-transition:all 0.35s ease;
-            transition:all 0.35s ease;
-        }
-
-        /*Анимация иконки при наведении - уменьшение и сдвиг вверх*/
-        .bulletsBlock > div:hover span.iconBullet{
-            line-height: 1.35em;
-            font-size: 10.625em;
-            top:-2.7%;
-        }
-        .titleBullet, .hideText {
-            position: absolute;
-            left:0;
-            bottom:0;
-            text-align: center;
-            width: 100%;
-            margin: 0;
-            color: #fff;
-            -webkit-transition:all 0.35s ease;
-            transition:all 0.35s ease;
-        }
-
-        .titleBullet {
-            line-height: 2.5em;
-            font-size: 2.1875em;
-            background:#3B3B3B;
-            z-index: 10;
-        }
-
-        .hideText {
-            line-height: 1.3em;
-            font-size: 1.25em;
-            padding: 1em 0;
-            background:#3B3B3B;
-            font-weight: 300;
-            z-index: 8;
-            height: 50px;
-            -webkit-transition:all 0.35s linear 0.2s;
-            transition:all 0.35s linear 0.2s;
-        }
-
-        /*Анимация при наведении видимого текстового блока*/
-        .bulletsBlock > div:hover p.titleBullet{
-            bottom:80px;
-        }
-
-        /*Анимация при наведении скрытого текстового блока*/
-        .bulletsBlock > div:hover p.hideText{
-            background:#454545;
-        }
         .hide {
             display: none;
         }
-    </style>
+    </style>-->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="try_test.js"></script>
+    <script src="try_test.js"></script>
 </head>
-<body class = "app" onload="InitTest()">
-	<h1>Тест-тренажер по языку гипертекстовой разметки</h1>
-    <p><span id="my_timer" style="color: #f00; font-size: 150%; font-weight: bold;">20:00</span></p>
-    <input id="plain_test" type=button value="Начать тест" onclick=PlainTest()>
-    <input id="train_test" type=button value="Тренировка" onclick=TrainTest()>
+<body onload="InitTest()">
+
+
+<div id="banner-wrapper"></div>
+<div id="header-wrapper">
+    <div id="header" class="container">
+        <div id="logo">
+            <h1><a href="#">Тест-тренажер</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><input id="train_test" type=button value="Тренировка" onclick=TrainTest()></li>
+                <li><input id="plain_test" type=button value="Начать тест" onclick=PlainTest()></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</div>
+<p><span id="timer" class="hide">20:00</span></p>
+<div id="page" class="container">
+    <div id="content-wrapper">
+        <div id="results" class="hide">
+        </div>
+    </div>
+    <div id="sidebar">
+        <ul>
+            <li>
+                <h2>Материалы по HTML, CSS, JavaScript и PHP</h2>
+                <ul>
+                    <li><a href="http://htmlbook.ru" target="_blank">Справочник CSS и HTML| htmlbook.ru</a></li>
+                    <li><a href="https://html5css.ru/tags/default.php" target="_blank">Справочник всех тегов HTML и CSS</a></li>
+                    <li><a href="https://javascript.ru/manual" target="_blank">Справочник JavaScript</a></li>
+                    <li><a href="https://www.php.net/manual/ru/langref.php" target="_blank">PHP: Справочник языка</a></li>
+                </ul>
+            </li>
+            <li>
+                <h2>Видеоуроки по HTML, CSS, JavaScript и PHP</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=GFqCX2AefQk&list=PLMB6wLyKp7lV9YoWTMCztq-KXYhYPB09K" target="_blank">Курс
+                        HTML & CSS 2018</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=JgIG6d3JsZs&list=PL0lO_mIqDDFUGX9k45bZFuz1ixTvUhd7b" target="_blank">Изучение
+                        JavaScript с нуля</a></li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL0lO_mIqDDFXm69bqj5JTCS1XGTNkhTch" target="_blank">Учим PHP(а
+                        также MySQL)</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
 </body>
 </html>

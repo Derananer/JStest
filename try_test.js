@@ -1,23 +1,24 @@
 function InitTest() {
     $.getJSON('package.json', function (data) {
-        var app = document.getElementsByTagName("body");
+        var app = document.getElementById("content-wrapper");
         var testForm = document.createElement('form');
-        app[0].appendChild(testForm);
+        app.appendChild(testForm);
         testForm.id = 'test_form';
-        var orderList = document.createElement('ol');
-        orderList.id="quest_list";
+        var orderList = document.createElement('div');
+        orderList.id = "content";
         orderList.className = "hide";
         testForm.appendChild(orderList);
         for (var i = 0; i < data.number; i++) {
             var question = data.questions[i];
-            var listElement = document.createElement('li');
-            listElement.className = 'listElement';
-            listElement.innerHTML = question.value;
+            var listElement = document.createElement('div');
+            listElement.className = 'post';
+            listElement.innerHTML = "<h4 class='title'>" + (i + 1) + ") " + question.value + "</h4>";
             for (var j = 0; j < question.numberOfAnswers; j++) {
                 let answer = document.createElement('input');
                 answer.type = question.type;
                 answer.name = "answ" + i;
                 let paragraph = document.createElement('p');
+                paragraph.className = "title";
                 paragraph.appendChild(answer);
                 paragraph.innerHTML += question.answers[j].value;
                 listElement.appendChild(paragraph);
@@ -28,14 +29,16 @@ function InitTest() {
         button.id = "check_button";
         button.type = "button";
         button.value = "Проверить";
+        button.className = "butt";
         testForm.appendChild(button);
         var resetButton = document.createElement('input');
         resetButton.id = "reset_button";
         resetButton.disabled = true;
         resetButton.type = "button";
         resetButton.value = "Начать заново";
-        resetButton.addEventListener('click', function(){
-            ResetAnswers();
+        resetButton.className = "butt";
+        resetButton.addEventListener('click', function () {
+            ResetTest();
             this.disabled = true;
         });
         testForm.appendChild(resetButton);
@@ -43,15 +46,18 @@ function InitTest() {
         clearButton.id = "clear_button";
         clearButton.type = "button";
         clearButton.value = "Очистить";
+        clearButton.className = "butt";
         clearButton.addEventListener('click', ClearAnswers);
         testForm.appendChild(clearButton);
-        //resetButton.addEventListener('click', ResetAnswers);
+        //resetButton.addEventListener('click', ResetTest);
         //button.addEventListener('click', StopTimer);
     });
 }
 
 function StopTimer() {
-    document.getElementById("my_timer").innerHTML = "00:00";
+    document.getElementById("timer").innerHTML = "00:00";
+    document.getElementById("timer").className = "hide";
+
 }
 
 function CreateButtonsForPlainTest() {
@@ -82,15 +88,14 @@ function ChangeButton() {
 }
 
 function PlainTest() {
-    document.getElementById("quest_list").className = "plain";
-    document.getElementById("my_timer").className = "plain";
-   // document.getElementById("reset_button").className = "plain";
-    document.getElementById("my_timer").innerHTML = "20:00";
+    document.getElementById("content").className = "plain";
+    document.getElementById("timer").className = "plain";
+    document.getElementById("timer").innerHTML = "20:00";
     var plain_test = document.getElementById("plain_test");
     var train_test = document.getElementById("train_test");
     plain_test.className = "hide";
     train_test.className = "plain";
-    document.getElementById("reset_button").className = "plain";
+    document.getElementById("reset_button").className = "butt";
     document.getElementById("reset_button").disabled = true;
     //DeleteForm();
     //InitTest();
@@ -99,8 +104,9 @@ function PlainTest() {
 }
 
 function TrainTest() {
-    document.getElementById("my_timer").className = "hide";
-    document.getElementById("quest_list").className = "plain";
+    document.getElementById("results").className = "hide";
+    document.getElementById("timer").className = "hide";
+    document.getElementById("content").className = "plain";
     var plain_test = document.getElementById("plain_test");
     var train_test = document.getElementById("train_test");
     train_test.className = "hide";
@@ -113,7 +119,8 @@ function TrainTest() {
 
 function CheckAnswers() {
     var count = 0;
-    document.getElementById("quest_list").className = "hide";
+    document.getElementById("timer").className = "hide";
+    document.getElementById("content").className = "hide";
     document.getElementById("train_test").disabled = false;
     $.getJSON('package.json', function (data) {
         for (var i = 0; i < data.number; i++) {
@@ -133,14 +140,8 @@ function CheckAnswers() {
                 if (CheckTextAnswer(answer, rightAnswer)) count++;
             }
         }
-        var result = Math.round(count / data.number * 100);
-        var mark;
-        if (result >= 90) mark = 5;
-        else if (result >= 70) mark = 4;
-        else if (result >= 40) mark = 3;
-        else mark = 2;
-        document.getElementById("reset_button").disabled = false;
-        alert("result: " + result + "%" + " your mark is " + mark);
+        ShowResults(count, data.number);
+
     });
 }
 
@@ -169,21 +170,38 @@ function CheckCheckboxAnswer(answers, numberOfRightAnswers, rightAnswers) {
 function CheckTextAnswer(answer, rightAnswer) {
     return answer[0].value == rightAnswer;
 }
-function ClearAnswers(){
+
+function ClearAnswers() {
     var test_form = document.getElementById('test_form');
     test_form.reset();
 }
-function ResetAnswers() {
+
+function ResetTest() {
     ClearAnswers();
-    document.getElementById("my_timer").innerHTML = "20:00";
-    document.getElementById("quest_list").className = "plain";
+    document.getElementById("timer").innerHTML = "20:00";
+    document.getElementById("content").className = "plain";
     document.getElementById("train_test").disabled = true;
+    document.getElementById("results").className = "hide";
     startTimer();
 }
 
+
+function ShowResults(count, countOfQuestions) {
+    var mark;
+    var result = Math.round(count / countOfQuestions * 100);
+    if (result >= 90) mark = 5;
+    else if (result >= 70) mark = 4;
+    else if (result >= 40) mark = 3;
+    else mark = 2;
+    document.getElementById("reset_button").disabled = false;
+    document.getElementById("results").innerHTML = "<h2> Результат: " + result + "%, ваша оценка " + mark + "</h2>";
+    document.getElementById("results").className = "plain";
+}
+
 function startTimer() {
-    var my_timer = document.getElementById("my_timer");
-    var time = my_timer.innerHTML;
+    var timer = document.getElementById("timer");
+    timer.className = "plain";
+    var time = timer.innerHTML;
     var arr = time.split(":");
     var m = arr[0];
     var s = arr[1];
@@ -199,7 +217,7 @@ function startTimer() {
     }
     else s--;
     if (s < 10) s = "0" + s;
-    document.getElementById("my_timer").innerHTML = m + ":" + s;
+    document.getElementById("timer").innerHTML = m + ":" + s;
     setTimeout(startTimer, 1000);
 }
 
