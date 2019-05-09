@@ -1,7 +1,9 @@
+var trainTestFlag = 0;
+
 function InitTest() {
     $.getJSON('package.json', function (data) {
         var app = document.getElementById("content-wrapper");
-        var testForm = document.createElement('form');
+        var testForm = document.createElement('div');
         app.appendChild(testForm);
         testForm.id = 'test_form';
         var orderList = document.createElement('div');
@@ -12,13 +14,13 @@ function InitTest() {
             var question = data.questions[i];
             var listElement = document.createElement('div');
             listElement.className = 'post';
-            listElement.innerHTML = "<h4 class='title'>" + (i + 1) + ") " + question.value + "</h4>";
+            listElement.innerHTML = "<h4 class='question'>" + (i + 1) + ") " + question.value + "</h4>";
             for (var j = 0; j < question.numberOfAnswers; j++) {
                 let answer = document.createElement('input');
                 answer.type = question.type;
                 answer.name = "answ" + i;
                 let paragraph = document.createElement('p');
-                paragraph.className = "title";
+                paragraph.className = "answer";
                 paragraph.appendChild(answer);
                 paragraph.innerHTML += question.answers[j].value;
                 listElement.appendChild(paragraph);
@@ -88,6 +90,10 @@ function ChangeButton() {
 }
 
 function PlainTest() {
+    trainTestFlag = 0;
+    ClearAnswers();
+    RemoveFlags();
+    document.getElementById("results").className = "hide";
     document.getElementById("content").className = "plain";
     document.getElementById("timer").className = "plain";
     document.getElementById("timer").innerHTML = "20:00";
@@ -95,15 +101,19 @@ function PlainTest() {
     var train_test = document.getElementById("train_test");
     plain_test.className = "hide";
     train_test.className = "plain";
-    document.getElementById("reset_button").className = "butt";
+    //document.getElementById("reset_button").className = "butt";
     document.getElementById("reset_button").disabled = true;
     //DeleteForm();
     //InitTest();
     CreateButtonsForPlainTest();
     startTimer();
+    $("html,body").animate({"scrollTop":0},"slow");
 }
 
 function TrainTest() {
+    trainTestFlag = 1;
+    RemoveFlags();
+    ClearAnswers();
     document.getElementById("results").className = "hide";
     document.getElementById("timer").className = "hide";
     document.getElementById("content").className = "plain";
@@ -111,38 +121,104 @@ function TrainTest() {
     var train_test = document.getElementById("train_test");
     train_test.className = "hide";
     plain_test.className = "plain";
-    document.getElementById("reset_button").className = "hide";
+    //document.getElementById("reset_button").className = "hide";
     //DeleteForm();
     //InitTest();
     CreateButtonsForTrainTest();
+    $("html,body").animate({"scrollTop":0},"slow");
+}
+
+function RemoveFlags() {
+    var flags = document.getElementsByClassName("right");
+    //console.log(flags);
+    var count = flags.length;
+    for (var i = 0; i < count; i++) {
+        flags[0].parentElement.removeChild(flags[0]);
+    }
+    flags = document.getElementsByClassName("wrong");
+    count = flags.length;
+    //console.log(flags);
+    for (var i = 0; i < count; i++) {
+        flags[0].parentElement.removeChild(flags[0]);
+    }
 }
 
 function CheckAnswers() {
     var count = 0;
+    RemoveFlags();
     document.getElementById("timer").className = "hide";
-    document.getElementById("content").className = "hide";
+    if (trainTestFlag == 0) document.getElementById("content").className = "hide";
     document.getElementById("train_test").disabled = false;
+    var questions = document.getElementsByClassName("post");
     $.getJSON('package.json', function (data) {
-        for (var i = 0; i < data.number; i++) {
-            var answer = document.getElementsByName("answ" + i);
-            var question = data.questions[i];
-            if (question.type == "radio") {
-                let rightAnswer = question.rightAnswer;
-                if (CheckRadioAnswer(answer, rightAnswer)) count++;
-            }
-            if (question.type == "checkbox") {
-                let numberOfRightAnswers = question.numberOfRightAnswers;
-                let rightAnswers = question.rightAnswers;
-                if (CheckCheckboxAnswer(answer, numberOfRightAnswers, rightAnswers)) count++;
-            }
-            if (question.type == "text") {
-                let rightAnswer = question.rightAnswer;
-                if (CheckTextAnswer(answer, rightAnswer)) count++;
-            }
-        }
-        ShowResults(count, data.number);
+            var rightFlag = document.createElement("div");
+            rightFlag.className = "right";
+            rightFlag.innerText = "верно";
+            var wrongFlag = document.createElement("div");
+            wrongFlag.className = "wrong";
+            wrongFlag.innerText = "неверно";
+            for (var i = 0; i < data.number; i++) {
+                var answer = document.getElementsByName("answ" + i);
+                var question = data.questions[i];
+                if (question.type == "radio") {
+                    let rightAnswer = question.rightAnswer;
+                    if (CheckRadioAnswer(answer, rightAnswer)) {
+                        count++;
+                        if (trainTestFlag == 1) {
+                            //console.log(answer[1].checked);
 
-    });
+                            questions[i].appendChild(rightFlag.cloneNode(true));
+                            //console.log(answer[1].checked);
+                        }
+                        //else
+                    }
+                    else if (trainTestFlag == 1) {
+                        questions[i].appendChild(wrongFlag.cloneNode(true));
+                        //ClearRadioAnswer(answer);
+
+                    }
+                    else {
+                        ClearRadioAnswer(answer);
+                    }
+                }
+                if (question.type == "checkbox") {
+                    let numberOfRightAnswers = question.numberOfRightAnswers;
+                    let rightAnswers = question.rightAnswers;
+                    if (CheckCheckboxAnswer(answer, numberOfRightAnswers, rightAnswers)) {
+                        count++;
+                        if (trainTestFlag == 1) {
+                            questions[i].appendChild(rightFlag.cloneNode(true));
+                        }
+                    }
+                    else if (trainTestFlag == 1) {
+                        questions[i].appendChild(wrongFlag.cloneNode(true));
+                        //ClearCheckboxAnswer(answer);
+                    }
+                    else {
+                        ClearCheckboxAnswer(answer);
+                    }
+                }
+                if (question.type == "text") {
+                    let rightAnswer = question.rightAnswer;
+                    if (CheckTextAnswer(answer, rightAnswer)) {
+                        count++;
+                        if (trainTestFlag == 1) {
+                            questions[i].appendChild(rightFlag.cloneNode(true));
+                        }
+                    }
+                    else if (trainTestFlag == 1) {
+                        questions[i].appendChild(wrongFlag.cloneNode(true));
+                        //ClearTextAnswer(answer);
+                    }
+                    else {
+                        ClearTextAnswer(answer);
+                    }
+                }
+            }
+            ShowResults(count, data.number);
+            $("html,body").animate({"scrollTop":0},"slow");
+        }
+    );
 }
 
 function CheckRadioAnswer(answers, rightAnswer) {
@@ -171,20 +247,46 @@ function CheckTextAnswer(answer, rightAnswer) {
     return answer[0].value == rightAnswer;
 }
 
+function ClearRadioAnswer(answers) {
+    for (var i = 0; i < answers.length; i++) {
+        answers[i].checked = false;
+    }
+}
+
+function ClearCheckboxAnswer(answers) {
+    for (var i = 0; i < answers.length; i++) {
+        answers[i].checked = false;
+    }
+}
+
+function ClearTextAnswer(answers) {
+    answers[0].value = "";
+}
+
 function ClearAnswers() {
-    var test_form = document.getElementById('test_form');
-    test_form.reset();
+    $.getJSON('package.json', function (data) {
+        for (var i = 0; i < data.number; i++) {
+            var answer = document.getElementsByName("answ" + i);
+            var question = data.questions[i];
+            if (question.type == "radio") ClearRadioAnswer(answer);
+            if (question.type == "checkbox") ClearCheckboxAnswer(answer);
+            if (question.type == "text") ClearTextAnswer(answer);
+        }
+    });
 }
 
 function ResetTest() {
     ClearAnswers();
-    document.getElementById("timer").innerHTML = "20:00";
-    document.getElementById("content").className = "plain";
-    document.getElementById("train_test").disabled = true;
+    RemoveFlags();
     document.getElementById("results").className = "hide";
-    startTimer();
+    if (trainTestFlag == 0) {
+        document.getElementById("timer").innerHTML = "20:00";
+        document.getElementById("content").className = "plain";
+        document.getElementById("train_test").disabled = true;
+        startTimer();
+    }
+    $("html,body").animate({"scrollTop":0},"slow");
 }
-
 
 function ShowResults(count, countOfQuestions) {
     var mark;

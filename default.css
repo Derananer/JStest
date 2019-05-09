@@ -182,23 +182,22 @@ hr {
     color: #262626;
 }
 
-.post .title {
+.post .question {
     padding: 7px 0px 0px 0px;
     letter-spacing: -1px;
-}
-
-.post .title a {
     border: none;
     font-size: 1.5em;
-    letter-spacing: -2px;
     text-decoration: none;
     font-weight: 600;
     color: #222222;
 }
-
-.post .entry {
-    padding: 0px 0px 40px 0px;
-    text-align: justify;
+.post .answer{
+    padding: 7px 0px 0px 0px;
+    letter-spacing: -1px;
+    border: none;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: #222222;
 }
 
 input.butt {
@@ -318,4 +317,13 @@ input.butt:disabled {
 #results.plain h2 {
     margin-bottom: 20px;
     color: #EEEEEE;
+}
+
+.right{
+    color:green;
+}
+
+.wrong{
+    color:red;
+
 }

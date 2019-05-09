@@ -1,51 +1,66 @@
 {
   "name": "JStest",
-  "number": 6,
-  "questions":
-  [
+  "number": 20,
+  "questions": [
     {
       "type": "radio",
-      "value": "question",
-      "numberOfAnswers": 4,
-      "answers":[
+      "value": "Сколько всего уровней заголовков <strong>&lt;H<em>X</em>&gt;</strong>",
+      "numberOfAnswers": 2,
+      "answers": [
         {
-          "value": "1"
+          "value": "от 1 до 10"
         },
         {
-          "value": "2"
-        },
-        {
-          "value": "3"
-        },
-        {
-          "value": "4"
+          "value": "от 1 до 6"
         }
       ],
       "rightAnswer": 1,
-      "hint":""
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Чтобы задать всплывающую подсказку при наведении на изображение необходимо использовать атрибут:",
+      "numberOfAnswers": 5,
+      "answers": [
+        {
+          "value": "src"
+        },
+        {
+          "value": "alt"
+        },
+        {
+          "value": "title"
+        },
+        {
+          "value": "width"
+        },
+        {
+          "value": "другое"
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
     },
     {
       "type": "checkbox",
-      "value": "hello",
+      "value": "Какие из перечисленных ниже тегов являются блочными?",
       "numberOfAnswers": 4,
-      "answers":
-      [
+      "answers": [
         {
-          "value": "1"
+          "value": "&lt;span&gt;"
         },
         {
-          "value": "2"
+          "value": "&lt;p&gt;"
         },
         {
-          "value": "3"
+          "value": "&lt;div&gt;"
         },
         {
-          "value": "4"
+          "value": "&lt;a&gt;"
         }
       ],
       "numberOfRightAnswers": 2,
-      "rightAnswers":
-      [
+      "rightAnswers": [
         {
           "value": "1"
         },
@@ -53,95 +68,328 @@
           "value": "2"
         }
       ],
-      "hint":""
+      "hint": ""
     },
     {
       "type": "text",
-      "value": "",
+      "value": "Чтобы вставить изображение на сайт необходимо использовать тег:",
       "numberOfAnswers": 1,
-      "answers":
-      [
+      "answers": [
         {
           "value": ""
         }
       ],
-      "rightAnswer": "hi",
-      "hint":""
-    },
-    {
-      "type": "checkbox",
-      "value": "hello",
-      "numberOfAnswers": 4,
-      "answers":
-      [
-        {
-          "value": "1"
-        },
-        {
-          "value": "2"
-        },
-        {
-          "value": "3"
-        },
-        {
-          "value": "4"
-        }
-      ],
-      "numberOfRightAnswers": 2,
-      "rightAnswers":
-      [
-        {
-          "value": "1"
-        },
-        {
-          "value": "2"
-        }
-      ],
-      "hint":""
+      "rightAnswer": "img",
+      "hint": ""
     },
     {
       "type": "text",
-      "value": "",
+      "value": "Обязательный атрибут тега, который используется для вставки изображений на сайт:",
       "numberOfAnswers": 1,
-      "answers":
-      [
+      "answers": [
         {
           "value": ""
         }
       ],
-      "rightAnswer": "hi",
-      "hint":""
+      "rightAnswer": "src",
+      "hint": ""
     },
     {
       "type": "checkbox",
-      "value": "hello",
+      "value": "Каких атрибутов не бывает?",
       "numberOfAnswers": 4,
-      "answers":
-      [
+      "answers": [
         {
-          "value": "1"
+          "value": "ins"
         },
+        {
+          "value": "alt"
+        },
+        {
+          "value": "meta"
+        },
+        {
+          "value": "style"
+        }
+      ],
+      "numberOfRightAnswers": 2,
+      "rightAnswers": [
+        {
+          "value": "0"
+        },
+        {
+          "value": "2"
+        }
+      ],
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "В чем отличие тегов <strong>&lt;div&gt;</strong> и <strong>&lt;span&gt;</strong>?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": "тег <strong>span</strong> не надо закрывать"
+        },
+        {
+          "value": "между ними нет разницы"
+        },
+        {
+          "value": "<strong>span</strong> - является строчным элементом, а <strong>div</strong> - блочным"
+        },
+        {
+          "value": "<strong>div</strong> - является строчным элементом, а <strong>span</strong> - блочным"
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "Для переопределения типа элемента со строчного на блочный используется CSS свойство:",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "display",
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Расшифруйте аббревиатуру CSS:",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": "Cascading Style Sheets"
+        },
+        {
+          "value": "Case Style Says"
+        },
+        {
+          "value": "Case Style Scholar"
+        }
+      ],
+      "rightAnswer": 0,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Что такое наследование в CSS?",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": "Такого понятия не существует в CSS"
+        },
+        {
+          "value": "Механизм, с помощью которого определенные свойства передаются от элемента к его ближайшим соседям."
+        },
+        {
+          "value": "Механизм, с помощью которого определенные свойства передаются от предка к его потомкам."
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "Для переопределения типа элемента с блочного на строчный используется CSS свойство:",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "display",
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "Каким свойством задают внутренний отступ у элемента?",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "padding",
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Если Вам нужно навесить псевдокласс на элемент при наведении, то каким из перечисленных Вы воспользуетесь?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": ":active"
+        },
+        {
+          "value": ":link"
+        },
+        {
+          "value": ":focus"
+        },
+        {
+          "value": ":hover"
+        }
+      ],
+      "rightAnswer": 3,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Какое свойство потребуется, чтобы установить шрифт для текста?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": "font-family"
+        },
+        {
+          "value": "font-style"
+        },
+        {
+          "value": "text-decoration"
+        },
+        {
+          "value": "visibility"
+        }
+      ],
+      "rightAnswer": 0,
+      "hint": ""
+    },
+    {
+      "type": "checkbox",
+      "value": "Какое из перечисленных свойств не устанавливает прозрачность?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": "opacity"
+        },
+        {
+          "value": "rgba"
+        },
+        {
+          "value": "transition"
+        },
+        {
+          "value": "position"
+        }
+      ],
+      "numberOfRightAnswers": 2,
+      "rightAnswers": [
         {
           "value": "2"
         },
         {
           "value": "3"
-        },
-        {
-          "value": "4"
         }
       ],
-      "numberOfRightAnswers": 2,
-      "rightAnswers":
-      [
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Для сброса базовых стилей для ссылки, каким свойством Вы воспользуетесь?",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": "visibility: hidden"
+        },
+        {
+          "value": "visibility: inherit"
+        },
+        {
+          "value": "text-decoration: none"
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "JavaScript это - ",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": "Объектно-ориентированный скриптовый язык программирования"
+        },
+        {
+          "value": "Скриптовой язык программирования"
+        },
+        {
+          "value": "Прототипно-ориентированный скриптовый язык программирования"
+        },
+        {
+          "value": "Все выше перечисленое верно"
+        }
+      ],
+      "rightAnswer": 3,
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "Расшифруйте аббревиатуру DOM (например Digital Optical Modulation):",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "Document Object Model",
+      "hint": ""
+    },
+    {
+      "type": "checkbox",
+      "value": "Какие ключевые слова используются в JavaScript для того, чтобы объявить переменную?",
+      "numberOfAnswers": 7,
+      "answers": [
+        {
+          "value": "byte"
+        },
+        {
+          "value": "var"
+        },
+        {
+          "value": "float"
+        },
+        {
+          "value": "int"
+        },
+        {
+          "value": "const"
+        },
+        {
+          "value": "let"
+        },
+        {
+          "value": "long"
+        }
+      ],
+      "numberOfRightAnswers": 3,
+      "rightAnswers": [
         {
           "value": "1"
         },
         {
-          "value": "2"
+          "value": "4"
+        },
+        {
+          "value": "5"
         }
       ],
-      "hint":""
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "var a = 1;<br>var b = ++a+a;<br>alert(b);<br>Результат работы кода - сообщение с текстом:",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "4",
+      "hint": ""
     }
   ]
 }
