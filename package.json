@@ -1,6 +1,6 @@
 {
   "name": "JStest",
-  "number": 20,
+  "number": 30,
   "questions": [
     {
       "type": "radio",
@@ -8,10 +8,10 @@
       "numberOfAnswers": 2,
       "answers": [
         {
-          "value": "от 1 до 10"
+          "value": " от 1 до 10"
         },
         {
-          "value": "от 1 до 6"
+          "value": " от 1 до 6"
         }
       ],
       "rightAnswer": 1,
@@ -23,19 +23,19 @@
       "numberOfAnswers": 5,
       "answers": [
         {
-          "value": "src"
+          "value": " src"
         },
         {
-          "value": "alt"
+          "value": " alt"
         },
         {
-          "value": "title"
+          "value": " title"
         },
         {
-          "value": "width"
+          "value": " width"
         },
         {
-          "value": "другое"
+          "value": " другое"
         }
       ],
       "rightAnswer": 2,
@@ -47,16 +47,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "&lt;span&gt;"
+          "value": " &lt;span&gt;"
         },
         {
-          "value": "&lt;p&gt;"
+          "value": " &lt;p&gt;"
         },
         {
-          "value": "&lt;div&gt;"
+          "value": " &lt;div&gt;"
         },
         {
-          "value": "&lt;a&gt;"
+          "value": " &lt;a&gt;"
         }
       ],
       "numberOfRightAnswers": 2,
@@ -100,16 +100,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "ins"
+          "value": " ins"
         },
         {
-          "value": "alt"
+          "value": " alt"
         },
         {
-          "value": "meta"
+          "value": " meta"
         },
         {
-          "value": "style"
+          "value": " style"
         }
       ],
       "numberOfRightAnswers": 2,
@@ -129,16 +129,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "тег <strong>span</strong> не надо закрывать"
+          "value": " тег <strong>span</strong> не надо закрывать"
         },
         {
-          "value": "между ними нет разницы"
+          "value": " между ними нет разницы"
         },
         {
-          "value": "<strong>span</strong> - является строчным элементом, а <strong>div</strong> - блочным"
+          "value": " <strong>span</strong> - является строчным элементом, а <strong>div</strong> - блочным"
         },
         {
-          "value": "<strong>div</strong> - является строчным элементом, а <strong>span</strong> - блочным"
+          "value": " <strong>div</strong> - является строчным элементом, а <strong>span</strong> - блочным"
         }
       ],
       "rightAnswer": 2,
@@ -162,13 +162,13 @@
       "numberOfAnswers": 3,
       "answers": [
         {
-          "value": "Cascading Style Sheets"
+          "value": " Cascading Style Sheets"
         },
         {
-          "value": "Case Style Says"
+          "value": " Case Style Says"
         },
         {
-          "value": "Case Style Scholar"
+          "value": " Case Style Scholar"
         }
       ],
       "rightAnswer": 0,
@@ -180,13 +180,13 @@
       "numberOfAnswers": 3,
       "answers": [
         {
-          "value": "Такого понятия не существует в CSS"
+          "value": " Такого понятия не существует в CSS"
         },
         {
-          "value": "Механизм, с помощью которого определенные свойства передаются от элемента к его ближайшим соседям."
+          "value": " Механизм, с помощью которого определенные свойства передаются от элемента к его ближайшим соседям."
         },
         {
-          "value": "Механизм, с помощью которого определенные свойства передаются от предка к его потомкам."
+          "value": " Механизм, с помощью которого определенные свойства передаются от предка к его потомкам."
         }
       ],
       "rightAnswer": 2,
@@ -222,16 +222,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": ":active"
+          "value": " :active"
         },
         {
-          "value": ":link"
+          "value": " :link"
         },
         {
-          "value": ":focus"
+          "value": " :focus"
         },
         {
-          "value": ":hover"
+          "value": " :hover"
         }
       ],
       "rightAnswer": 3,
@@ -243,16 +243,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "font-family"
+          "value": " font-family"
         },
         {
-          "value": "font-style"
+          "value": " font-style"
         },
         {
-          "value": "text-decoration"
+          "value": " text-decoration"
         },
         {
-          "value": "visibility"
+          "value": " visibility"
         }
       ],
       "rightAnswer": 0,
@@ -264,16 +264,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "opacity"
+          "value": " opacity"
         },
         {
-          "value": "rgba"
+          "value": " rgba"
         },
         {
-          "value": "transition"
+          "value": " transition"
         },
         {
-          "value": "position"
+          "value": " position"
         }
       ],
       "numberOfRightAnswers": 2,
@@ -293,13 +293,13 @@
       "numberOfAnswers": 3,
       "answers": [
         {
-          "value": "visibility: hidden"
+          "value": " visibility: hidden"
         },
         {
-          "value": "visibility: inherit"
+          "value": " visibility: inherit"
         },
         {
-          "value": "text-decoration: none"
+          "value": " text-decoration: none"
         }
       ],
       "rightAnswer": 2,
@@ -311,16 +311,16 @@
       "numberOfAnswers": 4,
       "answers": [
         {
-          "value": "Объектно-ориентированный скриптовый язык программирования"
+          "value": " Объектно-ориентированный скриптовый язык программирования"
         },
         {
-          "value": "Скриптовой язык программирования"
+          "value": " Скриптовой язык программирования"
         },
         {
-          "value": "Прототипно-ориентированный скриптовый язык программирования"
+          "value": " Прототипно-ориентированный скриптовый язык программирования"
         },
         {
-          "value": "Все выше перечисленое верно"
+          "value": " Все выше перечисленое верно"
         }
       ],
       "rightAnswer": 3,
@@ -344,25 +344,25 @@
       "numberOfAnswers": 7,
       "answers": [
         {
-          "value": "byte"
+          "value": " byte"
         },
         {
-          "value": "var"
+          "value": " var"
         },
         {
-          "value": "float"
+          "value": " float"
         },
         {
-          "value": "int"
+          "value": " int"
         },
         {
-          "value": "const"
+          "value": " const"
         },
         {
-          "value": "let"
+          "value": " let"
         },
         {
-          "value": "long"
+          "value": " long"
         }
       ],
       "numberOfRightAnswers": 3,
@@ -389,6 +389,197 @@
         }
       ],
       "rightAnswer": "4",
+      "hint": ""
+    },
+    {
+      "type": "checkbox",
+      "value": "Какие из этих вариантов не задает массив из элементов \"a\", \"b\"?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": " var a = new Array(\"a\",\"b\")"
+        },
+        {
+          "value": " var a = [ \"a\", \"b\" ]"
+        },
+        {
+          "value": " var a = ( \"a\", \"b\" )"
+        },
+        {
+          "value": " var a = \"a,b\".split(\",\")"
+        }
+      ],
+      "numberOfRightAnswers": 1,
+      "rightAnswers": [
+        {
+          "value": "2"
+        }
+      ],
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Можно ли инициировать DOM-событие из javascript?",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": " Да, можно"
+        },
+        {
+          "value": " Нет, нельзя"
+        },
+        {
+          "value": " В некоторых браузерах можно"
+        }
+      ],
+      "rightAnswer": 0,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "В каком случае из перечисленных событие не попадет на обработку javascript?",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": " Если в момент его наступления обрабатывается другое событие"
+        },
+        {
+          "value": " Если страничка просматривается локально, т.е offline"
+        },
+        {
+          "value": " Только если javascript отключен"
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "var a = function(){alert('click1');}<br>a = function(){alert('click2');}<br>document.getElementById(\"element\").onclick = a;<br>При клике на елемент появятся сообщение:",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "click2",
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Что такое замыкание в JavaScript?",
+      "numberOfAnswers": 3,
+      "answers": [
+        {
+          "value": " Это способность функции - вызывать саму себя"
+        },
+        {
+          "value": " Это способность функции - запоминать все переменные"
+        },
+        {
+          "value": " Это способность функции - запоминать область видимости, в которой эта функция была объявлена"
+        }
+      ],
+      "rightAnswer": 2,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Что такое PHP? Что делает этот язык?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": " PHP работает в браузере, обеспечивая интерактивность приложения"
+        },
+        {
+          "value": " PHP работает на сервере, обрабатывает запрос пользователя и динамически генерирует HTML-разметку"
+        },
+        {
+          "value": " PHP описывает разметку страницу и её стили"
+        },
+        {
+          "value": " PHP помогает пользователю отправлять данные без перезагрузки страницы"
+        }
+      ],
+      "rightAnswer": 1,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Как в PHP создать новую переменную с именем animal и строковым значением ‘cat’?",
+      "numberOfAnswers": 5,
+      "answers": [
+        {
+          "value": " animal = ‘cat’;"
+        },
+        {
+          "value": " $animal = cat"
+        },
+        {
+          "value": " string animal = “cat”;"
+        },
+        {
+          "value": " var animal = ‘cat’;"
+        },
+        {
+          "value": " $animal = ‘cat’;"
+        }
+      ],
+      "rightAnswer": 4,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Что делает этот код? namespace Hello\\World;",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": " Создает одно пространство имен: Hello\\World"
+        },
+        {
+          "value": " Создает два пространства имен: Hello\\World и World"
+        },
+        {
+          "value": " Создает два пространства имен: Hello и World"
+        },
+        {
+          "value": " Создает два пространства имен: Hello и Hello\\World"
+        }
+      ],
+      "rightAnswer": 3,
+      "hint": ""
+    },
+    {
+      "type": "radio",
+      "value": "Как сделать редирект (например, на google.ru) на PHP?",
+      "numberOfAnswers": 4,
+      "answers": [
+        {
+          "value": " document.location = “http://google.ru”;"
+        },
+        {
+          "value": " header(“Location: http://google.ru”);"
+        },
+        {
+          "value": " location.href = “http://google.ru”;"
+        },
+        {
+          "value": " header(“Redirect: http://google.ru”);"
+        }
+      ],
+      "rightAnswer": 1,
+      "hint": ""
+    },
+    {
+      "type": "text",
+      "value": "Скрипт:<br><?php<br>for ($i = 0; $i < 5; $i++) {<br>if ($i % 2 == 0) continue;<br>echo $i;<br>}<br>Что пользователь увидит после запуска скрипта?",
+      "numberOfAnswers": 1,
+      "answers": [
+        {
+          "value": ""
+        }
+      ],
+      "rightAnswer": "13",
       "hint": ""
     }
   ]

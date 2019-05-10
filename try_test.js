@@ -16,13 +16,16 @@ function InitTest() {
             listElement.className = 'post';
             listElement.innerHTML = "<h4 class='question'>" + (i + 1) + ") " + question.value + "</h4>";
             for (var j = 0; j < question.numberOfAnswers; j++) {
+                let label = document.createElement('label');
                 let answer = document.createElement('input');
                 answer.type = question.type;
                 answer.name = "answ" + i;
                 let paragraph = document.createElement('p');
                 paragraph.className = "answer";
-                paragraph.appendChild(answer);
-                paragraph.innerHTML += question.answers[j].value;
+                //paragraph.appendChild(answer);
+                label.appendChild(answer);
+                label.innerHTML += question.answers[j].value;
+                paragraph.appendChild(label);
                 listElement.appendChild(paragraph);
             }
             orderList.appendChild(listElement);
@@ -322,5 +325,4 @@ function startTimer() {
     document.getElementById("timer").innerHTML = m + ":" + s;
     setTimeout(startTimer, 1000);
 }
-
 
