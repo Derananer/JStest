@@ -296,7 +296,7 @@ function ShowResults(count, countOfQuestions) {
     var result = Math.round(count / countOfQuestions * 100);
     if (result >= 90) mark = 5;
     else if (result >= 70) mark = 4;
-    else if (result >= 40) mark = 3;
+    else if (result >= 50) mark = 3;
     else mark = 2;
     document.getElementById("reset_button").disabled = false;
     document.getElementById("results").innerHTML = "<h2> Результат: " + result + "%, ваша оценка " + mark + "</h2>";
